@@ -1,23 +1,27 @@
+import CategoriesList from "../components/CatogoriesList";
+import { fetchfromURI } from "../utils/api-service";
+
 import Carousel from "../ui/carousel";
 
-export default function Home({ banners }) {
+export default function Home({ banners, categories }) {
   return (
     <>
       <Carousel banners={banners} />
+      <CategoriesList categories={categories} />
     </>
   );
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:5000/banners");
-  const banners = await res.json();
+  const banners = await fetchfromURI("banners");
+  const categories = await fetchfromURI("categories");
   if (!banners) {
     return { notFound: true };
   }
-
   return {
     props: {
       banners: banners,
+      categories: categories,
     },
   };
 };
