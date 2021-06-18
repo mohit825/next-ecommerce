@@ -20,14 +20,21 @@ export const Container = styled.section`
   box-shadow: 0px 6px 6px 1px rgba(41, 36, 41, 0.72);
 
   .info-container {
+    flex-grow: 2;
+    padding: 20px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
-  .explore-btn {
+  /* .explore-btn {
     background: #c2383d;
     width: fit-content;
     color: white;
     padding: 14px;
+  } */
+  .desc {
+    margin: 5px 0 25px 0;
   }
 `;
