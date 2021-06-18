@@ -2,7 +2,7 @@ import { FlatButton } from "../styles/ButtonStyle";
 const Button = ({ children }) => {
   return (
     <FlatButton>
-      <div className="explore-flat-btn">{children}</div>
+      <button className="explore-flat-btn">{children}</button>
     </FlatButton>
   );
 };
