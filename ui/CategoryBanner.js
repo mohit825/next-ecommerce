@@ -1,4 +1,4 @@
-import { Container, Img } from "../styles/CategoryStyle";
+import { Container, Img } from "../styles/styled-component/CategoryStyle";
 import Button from "./Button";
 const CategoryBanner = ({
   image,

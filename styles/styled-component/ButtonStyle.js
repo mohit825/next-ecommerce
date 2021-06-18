@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const FlatButton = styled.button`
-  background: #c2383d;
+  background: var(--primary-clr);
   width: fit-content;
   color: white;
   padding: 14px;
