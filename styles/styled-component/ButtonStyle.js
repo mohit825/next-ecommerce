@@ -7,3 +7,7 @@ export const FlatButton = styled.button`
   cursor: pointer;
   border: none;
 `;
+
+export const ProductPageButton = styled(FlatButton)`
+  padding: 10px 20px;
+`;

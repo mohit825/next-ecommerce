@@ -1,4 +1,4 @@
-import SliderWrapper from "../styles/Bannerstyle";
+import SliderWrapper from "../styles/styled-component/Bannerstyle";
 
 const Carousel = ({ banners }) => {
   const settings = {

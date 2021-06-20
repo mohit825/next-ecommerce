@@ -38,3 +38,15 @@ export const Container = styled.section`
     margin: 5px 0 25px 0;
   }
 `;
+
+export const ProductImg = styled(Img)`
+  height: 178px;
+  width: auto;
+  object-fit: contain;
+  padding: 0 0 10px 0;
+`;
+
+export const ProductImageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;

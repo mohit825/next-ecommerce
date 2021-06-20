@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const Navigation = styled.nav`
-  background-color: #d0d0d0;
-  width: 20rem;
+  background-color: var(--grey-clr);
+  width: 20%;
   list-style: none;
   height: 100vh;
   float: left;
+  position: fixed;
 `;
