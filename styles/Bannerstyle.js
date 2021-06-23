@@ -1,4 +1,4 @@
-import Slider from "react-slick";
+import Slider from "@ant-design/react-slick";
 import styled from "styled-components";
 
 const SliderWrapper = styled(Slider)`

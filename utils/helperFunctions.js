@@ -4,3 +4,5 @@ export const orderCategories = (categories) => {
   });
   return newCategories;
 };
+
+export const LINKS = ["Home", "Products"];

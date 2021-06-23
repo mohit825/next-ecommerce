@@ -1,4 +1,4 @@
-html,
+/* html,
 body {
   padding: 0;
   margin: 0;
@@ -13,4 +13,17 @@ a {
 
 * {
   box-sizing: border-box;
+} */
+
+:root {
+  --primary-clr: #c2383d;
+  --grey-clr: #d0d0d0;
+}
+
+a:link {
+  color: var(--primary-clr);
+}
+
+a:visited {
+  color: var(--primary-clr);
 }
