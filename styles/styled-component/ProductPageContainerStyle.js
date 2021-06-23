@@ -33,6 +33,7 @@ export const ArticleContainer = styled.article`
     padding: 5px;
     height: 70px;
     overflow: hidden;
+    line-height: 1.4;
   }
 `;
 
