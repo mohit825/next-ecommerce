@@ -1,13 +1,30 @@
 import CategoryBanner from "../ui/CategoryBanner";
+import { useState, useEffect } from "react";
 import CategoriesNav from "../ui/CategoriesNav";
 import { orderCategories } from "../utils/helperFunctions";
 import { Navigation } from "../styles/styled-component/CategoryNavStyle";
 
 const CategoriesList = ({ categories, isNavigation }) => {
+  const [scroll, setScroll] = useState(false);
+  const evenfunction = () => {
+    if (window.scrollY > 80) {
+      console.log("scrolled");
+      setScroll(true);
+    } else {
+      setScroll(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", evenfunction);
+    return () => {
+      window.removeEventListener("scroll", evenfunction);
+    };
+  }, []);
   const orderedCategories = orderCategories(categories);
 
   const NavigationBar = (
-    <Navigation>
+    <Navigation scroll={scroll}>
       {orderedCategories.map((category) => {
         return (
           <CategoriesNav

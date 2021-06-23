@@ -4,7 +4,7 @@ export const Header = styled.header`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-
+  margin-bottom: 10px;
   .nav-link {
     display: flex;
     flex-direction: row;

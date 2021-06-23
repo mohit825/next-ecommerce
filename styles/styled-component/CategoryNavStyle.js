@@ -7,4 +7,7 @@ export const Navigation = styled.nav`
   height: 100vh;
   float: left;
   position: fixed;
+  top: ${({ scroll }) => (scroll ? 0 : "auto")};
 `;
+
+/* flex-direction: ${({ order }) => (order % 2 === 0 ? "row-reverse" : "row")} */
