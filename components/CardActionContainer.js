@@ -2,11 +2,13 @@ import PriceTag from "../ui/Card/PriceTag";
 import { ProductPageButton } from "../styles/styled-component/ButtonStyle";
 import { CardActionStyle } from "../styles/styled-component/ProductPageContainerStyle";
 
-const CardActionContainer = ({ children }) => {
+const CardActionContainer = ({ children, name }) => {
   return (
     <CardActionStyle>
       <PriceTag>{children}</PriceTag>
-      <ProductPageButton>Buy Now</ProductPageButton>
+      <ProductPageButton aria-label={`Buy ${name} for ${children} ₹ `}>
+        Buy Now
+      </ProductPageButton>
     </CardActionStyle>
   );
 };

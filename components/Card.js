@@ -6,7 +6,9 @@ const Card = ({ product }) => {
     <>
       <ProductName>{product.name}</ProductName>
       <ProductImage src={product.imageURL} description={product.description} />
-      <CardActionContainer>{product.price}</CardActionContainer>
+      <CardActionContainer name={product.name}>
+        {product.price}
+      </CardActionContainer>
     </>
   );
 };
