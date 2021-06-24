@@ -1,15 +1,15 @@
 import UserAccessContainer from "../../components/UserAccessContainer/UserAccessContainer";
 import { Section } from "../../styles/styled-component/UserAccessStyle";
-import LoginForm from "../../components/LoginFormContainer/LoginForm";
-const Signin = () => {
+import RegisterForm from "../../components/RegisterFormContainer/RegisterForm";
+const Register = () => {
   return (
     <Section>
       <UserAccessContainer
-        title="Login"
-        description="Get access to your Orders, Wishlist and Recommendations"
+        title="Signup"
+        description="We do not share your details with anyone"
       ></UserAccessContainer>
-      <LoginForm />
+      <RegisterForm />
     </Section>
   );
 };
-export default Signin;
+export default Register;
