@@ -1,6 +1,6 @@
 import { ListItem } from "../styles/styled-component/NavItemStyle";
-const NavItem = ({ children }) => {
-  return <ListItem>{children}</ListItem>;
+const NavItem = ({ children, categoryClicked }) => {
+  return <ListItem onClick={categoryClicked}>{children}</ListItem>;
 };
 
 export default NavItem;
