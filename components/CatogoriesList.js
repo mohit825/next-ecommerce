@@ -8,7 +8,6 @@ const CategoriesList = ({ categories, isNavigation }) => {
   const [scroll, setScroll] = useState(false);
   const evenfunction = () => {
     if (window.scrollY > 80) {
-      console.log("scrolled");
       setScroll(true);
     } else {
       setScroll(false);
