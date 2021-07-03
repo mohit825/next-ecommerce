@@ -4,7 +4,7 @@ import CategoriesNav from "../ui/CategoriesNav";
 import { orderCategories } from "../utils/helperFunctions";
 import { Navigation } from "../styles/styled-component/CategoryNavStyle";
 
-const CategoriesList = ({ categories, isNavigation }) => {
+const CategoriesList = ({ categories, isNavigation, setCategory }) => {
   const [scroll, setScroll] = useState(false);
   const evenfunction = () => {
     if (window.scrollY > 80) {
@@ -21,7 +21,9 @@ const CategoriesList = ({ categories, isNavigation }) => {
     };
   }, []);
   const orderedCategories = orderCategories(categories);
-
+  const selectedCategory = (id) => {
+    setCategory(id);
+  };
   const NavigationBar = (
     <Navigation scroll={scroll}>
       {orderedCategories.map((category) => {
@@ -31,6 +33,7 @@ const CategoriesList = ({ categories, isNavigation }) => {
             name={category.name}
             id={category.id}
             order={category.order}
+            categorySelect={selectedCategory}
           />
         );
       })}
