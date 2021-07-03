@@ -1,33 +1,42 @@
 import { FlatButton } from "../../styles/styled-component/ButtonStyle";
 import { useState } from "react";
+import { validation } from "../../utils/helperFunctions";
 const RegisterForm = () => {
-  const [fName, setFname] = useState("");
-  const [lName, setLname] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [cnfPassword, setCnfpassword] = useState("");
+  const [formValues, setFormValues] = useState({
+    fName: "",
+    lName: "",
+    email: "",
+    password: "",
+    cnfPassword: "",
+  });
+  const [formError, setFormError] = useState({
+    fName: null,
+    lName: null,
+    email: null,
+    password: null,
+    cnfPassword: null,
+  });
 
+  // const validate = () =>{
+  //   if(fName === "" || )
+  // }
   const onChangeHandler = (e) => {
-    if (e.target.id === "email") {
-      setEmail(e.target.value);
-    } else if (e.target.id === "password") {
-      setPassword(e.target.value);
-    } else if (e.target.id === "fname") {
-      setFname(e.target.value);
-    } else if (e.target.id === "lname") {
-      setLname(e.target.value);
-    } else if (e.target.id === "cnfpassword") {
-      setCnfpassword(e.target.value);
-    }
+    setFormValues({
+      ...formValues,
+      [e.target.name]: e.target.value,
+    });
   };
   const onClickHandler = (e) => {
     e.preventDefault();
-    console.log("Register", fName, lName, email, password, cnfPassword);
-    setFname("");
-    setFname("");
-    setEmail("");
-    setPassword("");
-    setCnfpassword("");
+    // console.log("Register", fName, lName, email, password, cnfPassword);
+    // setFname("");
+    // setFname("");
+    // setEmail("");
+    // setPassword("");
+    // setCnfpassword("");
+    // setFormError(validation(formValues));
+
+    console.log();
   };
   return (
     <form className="login-form" onSubmit={onClickHandler}>
@@ -36,54 +45,66 @@ const RegisterForm = () => {
         <input
           type="text"
           id="fname"
+          name="fName"
           placeholder="First Name"
-          value={fName}
+          value={formValues.fName}
           onChange={onChangeHandler}
           autoComplete="off"
         />
       </div>
+      {formError.fName && <div className="error">{formError.fName}</div>}
       <div className="p-20">
         <label htmlFor="lname"></label>
         <input
           type="text"
           id="lname"
+          name="lName"
           placeholder="Last Name"
-          value={lName}
+          value={formValues.lName}
           onChange={onChangeHandler}
           autoComplete="off"
         />
       </div>
+      {formError.lName && <div className="error">{formError.lName}</div>}
       <div className="p-20">
         <label htmlFor="email"></label>
         <input
           type="email"
           id="email"
+          name="email"
           placeholder="Email"
-          value={email}
+          value={formValues.email}
           onChange={onChangeHandler}
           autoComplete="off"
         />
       </div>
+      {formError.email && <div className="error">{formError.email}</div>}
       <div className="p-20">
         <label htmlFor="password"></label>
         <input
           type="password"
           id="password"
+          name="password"
           placeholder="Password"
-          value={password}
+          value={formValues.password}
           onChange={onChangeHandler}
         />
       </div>
+      {formError.password && <div className="error">{formError.password}</div>}
       <div className="p-20">
         <label htmlFor="cnfpassword"></label>
         <input
           type="password"
           id="cnfpassword"
+          name="cnfPassword"
           placeholder="Confirm Password"
-          value={cnfPassword}
+          value={formValues.cnfPassword}
           onChange={onChangeHandler}
         />
       </div>
+      {formError.cnfPassword && (
+        <div className="error">{formError.cnfPassword}</div>
+      )}
       <div className="p-20">
         <FlatButton type="longBtn">Register</FlatButton>
       </div>

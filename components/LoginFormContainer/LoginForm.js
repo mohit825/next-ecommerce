@@ -1,8 +1,12 @@
 import { FlatButton } from "../../styles/styled-component/ButtonStyle";
 import { useState } from "react";
+import { useRouter } from "next/router";
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const router = useRouter();
 
   const onChangeHandler = (e) => {
     if (e.target.id === "email") {
@@ -13,9 +17,33 @@ const LoginForm = () => {
   };
   const onClickHandler = (e) => {
     e.preventDefault();
-    console.log("Logged in", email, password);
+    let valid = validate();
+    if (valid) {
+      clearForm();
+      router.push("/");
+    }
+  };
+  const clearForm = () => {
     setEmail("");
     setPassword("");
+    setEmailError("");
+    setPasswordError("");
+  };
+
+  const validate = () => {
+    if (email === "") {
+      setEmailError("Please Enter Email");
+      return false;
+    }
+    if (!email.includes("@")) {
+      setEmailError("Please Enter Correct Email");
+      return false;
+    }
+    if (password === "") {
+      setPasswordError("Please Enter Password");
+      return false;
+    }
+    return true;
   };
   return (
     <form className="login-form" onSubmit={onClickHandler}>
@@ -29,6 +57,7 @@ const LoginForm = () => {
           onChange={onChangeHandler}
         />
       </div>
+      <div className="error">{emailError}</div>
       <div className="p-20">
         <label htmlFor="password"></label>
         <input
@@ -39,6 +68,7 @@ const LoginForm = () => {
           onChange={onChangeHandler}
         />
       </div>
+      <div className="error">{passwordError}</div>
       <div className="p-20">
         <FlatButton type="longBtn">Login</FlatButton>
       </div>
