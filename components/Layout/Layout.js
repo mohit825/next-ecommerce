@@ -1,9 +1,10 @@
 import FooterContainer from "../../ui/FooterContainer";
-
+import CartPopup from "../CartModal/CartPopup";
 import MainNavigation from "./MainNavigation";
 const Layout = ({ children }) => {
   return (
     <>
+      <CartPopup />
       <MainNavigation />
       <main>{children}</main>
       <FooterContainer>

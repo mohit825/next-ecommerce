@@ -41,6 +41,7 @@ export const Header = styled.header`
     float: right;
     background-color: var(--grey-clr);
     padding: 15px;
+    cursor: pointer;
   }
 
   .cart {
