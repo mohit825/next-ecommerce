@@ -1,9 +1,9 @@
 import { useCart } from "../../context/CartContext";
 
 const CartItemPlaceholder = () => {
-  const { cartItem } = useCart();
+  const { cartLength } = useCart();
 
-  return <span> {cartItem.length} Items</span>;
+  return <span> {cartLength} Items</span>;
 };
 
 export default CartItemPlaceholder;

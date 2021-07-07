@@ -18,3 +18,9 @@ export const RoundButton = styled(FlatButton)`
   width: 20px;
   padding: 0;
 `;
+
+export const CartButton = styled(FlatButton)`
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+`;

@@ -1,40 +1,27 @@
+import { useEffect } from "react";
 import { useContext } from "react";
 import { createContext, useState } from "react";
+import { calculatePrice } from "../utils/helperFunctions";
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cartItem, setcartItem] = useState([]);
+  const [cartItem, setCartItem] = useState([]);
   const [modal, setModal] = useState(false);
-  // let flag = false;
+  const [cartLength, setCartLength] = useState(0);
+  const [totalCartPrice, setTotalCartPrice] = useState(0);
+  const calculateCartItemLength = () => {
+    let sum = 0;
+    cartItem.forEach((prod) => {
+      sum = sum + prod.quantity;
+    });
+    setCartLength(sum);
+  };
 
-  // const addToCart = (productToAdd) => {
-  //   console.log(productToAdd);
-  //   productToAdd["quantity"] = 1;
-  //   // setcartItem((prevItem) => [...prevItem, { ...productToAdd }]);
-  //   setcartItem((prevItem) => {
-  //     console.log(prevItem, "ye prevItem hai");
-  //     prevItem.map((prod) => {
-  //       if (prod.id === productToAdd.id) {
-  //         productToAdd["quantity"] = productToAdd["quantity"] + 1;
-  //         flag = true;
-  //       } else {
-  //         flag = false;
-  //       }
-  //     });
-  //     return [...prevItem, { ...productToAdd }];
-  //   });
-  // };
-
-  // commenting as of now.
-  // const addToCart = (productToAdd) => {
-  //   let obj = productToAdd;
-  //   obj["quantity"] = 1;
-
-  //   setcartItem((prevItem) => {
-  //     return [...prevItem, obj];
-  //   });
-  // };
+  useEffect(() => {
+    calculateCartItemLength();
+    updateCartPrice();
+  }, [cartItem]);
 
   const addToCart = (productToAdd) => {
     const present = cartItem.some((prod) => {
@@ -42,11 +29,11 @@ export const CartProvider = ({ children }) => {
     });
     if (!present) {
       productToAdd["quantity"] = 1;
-      setcartItem((prev) => {
+      setCartItem((prev) => {
         return [...prev, productToAdd];
       });
     } else {
-      setcartItem((prev) => {
+      setCartItem((prev) => {
         prev.map((prod) => {
           if (prod.id === productToAdd.id) {
             prod.quantity++;
@@ -56,14 +43,6 @@ export const CartProvider = ({ children }) => {
       });
     }
   };
-  // useEffect(() => {
-  //   manageCart();
-  // }, [cartItem]);
-
-  // const manageCart = () => {
-  //   console.log(cartItem, "id");
-  //   cartItem.reduce()
-  // };
 
   const closePopup = () => {
     setModal(false);
@@ -73,9 +52,52 @@ export const CartProvider = ({ children }) => {
     setModal(true);
   };
 
+  const incrementQuantity = (id) => {
+    setCartItem((prev) => {
+      prev.map((prod) => {
+        if (prod.id === id) {
+          prod.quantity += 1;
+        }
+      });
+      return [...prev];
+    });
+  };
+
+  const decrementQuantity = (id) => {
+    setCartItem((prev) => {
+      prev.map((prod) => {
+        if (prod.id === id) {
+          prod.quantity -= 1;
+        }
+      });
+      const notZero = prev.filter((prod) => {
+        return prod.quantity != 0;
+      });
+      return [...notZero];
+    });
+  };
+
+  const updateCartPrice = () => {
+    let sum = 0;
+    cartItem.map((prod) => {
+      sum = sum + calculatePrice(prod.price, prod.quantity);
+    });
+    setTotalCartPrice(sum);
+  };
+
   return (
     <CartContext.Provider
-      value={{ cartItem, addToCart, modal, openPopup, closePopup }}
+      value={{
+        cartItem,
+        cartLength,
+        modal,
+        totalCartPrice,
+        addToCart,
+        openPopup,
+        closePopup,
+        incrementQuantity,
+        decrementQuantity,
+      }}
     >
       {children}
     </CartContext.Provider>

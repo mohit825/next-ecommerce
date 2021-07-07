@@ -16,7 +16,7 @@ export const Overlay = styled.section`
 
 export const CartContainer = styled.div`
   background: aliceblue;
-  width: 30%;
+  width: 50%;
   height: 80%;
   position: absolute;
   top: 10%;
@@ -46,12 +46,12 @@ export const CartContainer = styled.div`
   }
 
   .cart-btn {
-    position: sticky;
-    bottom: 0;
     width: 100%;
+    font-size: 20px;
   }
   .product-display {
     overflow-y: scroll;
+    overflow-x: hidden;
   }
 `;
 
@@ -59,7 +59,7 @@ export const CartProductContainer = styled.div`
   width: 100%;
   background: #fff;
   display: flex;
-  margin-bottom: 15px;
+  margin: 10px 0 15px 10px;
 
   .product-image {
     width: 70px;
@@ -75,6 +75,7 @@ export const CartProductContainer = styled.div`
   }
   .item-group {
     flex-grow: 2;
+    width: 25%;
   }
   .calc-price {
     flex-grow: 1;

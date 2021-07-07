@@ -1,13 +1,15 @@
 import { useCart } from "../../context/CartContext";
 import CartProduct from "../../ui/Cart/CartProduct";
+import LowestOfferContainer from "../../ui/Cart/LowestOfferContainer";
 const CartItems = () => {
   const { cartItem } = useCart();
 
-  // useEffect(() => {
-  //   // add();
-  //   // getId();
-  // }, [cartItem]);
-  const showItem = <CartProduct items={cartItem} />;
+  const showItem = (
+    <div>
+      <CartProduct items={cartItem} />
+      <LowestOfferContainer />
+    </div>
+  );
 
   const noItem = (
     <div className="no-item">
@@ -15,6 +17,7 @@ const CartItems = () => {
       <p>Your favourite items are just a click away.</p>
     </div>
   );
+
   return cartItem.length ? (
     <section className="product-display">{showItem}</section>
   ) : (

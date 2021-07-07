@@ -1,7 +1,10 @@
 import { CartProductContainer } from "../../styles/styled-component/Popup";
 import { RoundButton } from "../../styles/styled-component/ButtonStyle";
 import { calculatePrice } from "../../utils/helperFunctions";
+import { useCart } from "../../context/CartContext";
+
 const CartProduct = ({ items }) => {
+  const { incrementQuantity, decrementQuantity } = useCart();
   console.log(items, "items");
   return items.map((item) => {
     return (
@@ -10,9 +13,13 @@ const CartProduct = ({ items }) => {
         <div className="item-group">
           <h5 className="product-name">{item.name}</h5>
           <div className="product-access">
-            <RoundButton>-</RoundButton>
+            <RoundButton onClick={() => decrementQuantity(item.id)}>
+              -
+            </RoundButton>
             <span>{item.quantity}</span>
-            <RoundButton>+</RoundButton>
+            <RoundButton onClick={() => incrementQuantity(item.id)}>
+              +
+            </RoundButton>
             <span>X Rs.{item.price}</span>
           </div>
         </div>
