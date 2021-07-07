@@ -13,3 +13,7 @@ export const filterProductFromCategory = (id, products) => {
     return product.category === id;
   });
 };
+
+export const calculatePrice = (price, quantity) => {
+  return parseInt(price) * parseInt(quantity);
+};

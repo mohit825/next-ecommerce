@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useCart } from "../../context/CartContext";
 import CartProduct from "../../ui/Cart/CartProduct";
 const CartItems = () => {
@@ -16,7 +15,11 @@ const CartItems = () => {
       <p>Your favourite items are just a click away.</p>
     </div>
   );
-  return cartItem.length ? showItem : noItem;
+  return cartItem.length ? (
+    <section className="product-display">{showItem}</section>
+  ) : (
+    noItem
+  );
 };
 
 export default CartItems;

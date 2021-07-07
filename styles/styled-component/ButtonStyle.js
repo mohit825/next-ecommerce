@@ -11,3 +11,10 @@ export const FlatButton = styled.button`
 export const ProductPageButton = styled(FlatButton)`
   padding: 10px 20px;
 `;
+
+export const RoundButton = styled(FlatButton)`
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  padding: 0;
+`;

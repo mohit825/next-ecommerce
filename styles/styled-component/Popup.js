@@ -30,6 +30,7 @@ export const CartContainer = styled.div`
     color: white;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 15px;
 
     .cross {
       cursor: pointer;
@@ -45,9 +46,12 @@ export const CartContainer = styled.div`
   }
 
   .cart-btn {
-    position: absolute;
+    position: sticky;
     bottom: 0;
     width: 100%;
+  }
+  .product-display {
+    overflow-y: scroll;
   }
 `;
 
@@ -55,10 +59,27 @@ export const CartProductContainer = styled.div`
   width: 100%;
   background: #fff;
   display: flex;
+  margin-bottom: 15px;
 
   .product-image {
     width: 70px;
     object-fit: contain;
     padding: 8px;
+  }
+  .product-name {
+    margin-bottom: 5px;
+  }
+  .product-access {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .item-group {
+    flex-grow: 2;
+  }
+  .calc-price {
+    flex-grow: 1;
+    padding-bottom: 6px;
+    align-self: flex-end;
+    text-align: center;
   }
 `;
