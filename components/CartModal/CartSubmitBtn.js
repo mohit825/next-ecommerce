@@ -17,7 +17,7 @@ const CartSubmitBtn = () => {
           </span>
           <CartButton onClick={closePopup} type="longBtn" className="cart-btn">
             <p>Proceed to Checkout</p>
-            <p>Rs.{totalCartPrice}</p>
+            <p>Rs.{totalCartPrice} &nbsp; &gt; </p>
           </CartButton>
         </>
       ) : (

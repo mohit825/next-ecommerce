@@ -9,9 +9,11 @@ const CartContent = () => {
     <CartContainer>
       <div className="cart-access">
         <span>My Cart ({cartItem.length} Items)</span>
-        <span className="cross" onClick={closePopup}>
-          cross
-        </span>
+        <img
+          className="cross"
+          onClick={closePopup}
+          src="/static/images/cancel.png"
+        />
       </div>
       <CartItems />
       <CartSubmitBtn />
