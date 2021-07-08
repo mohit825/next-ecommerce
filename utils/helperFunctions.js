@@ -10,7 +10,6 @@ export const orderCategories = (categories) => {
 export const LINKS = ["Home", "Products"];
 
 export const filterProductFromCategory = (id, products) => {
-  console.log(id, products);
   return products.filter((product) => {
     return product.category === id;
   });

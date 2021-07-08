@@ -4,12 +4,15 @@ import ProductsList from "../../components/ProductsList";
 import { ProductPageContainer } from "../../styles/styled-component/ProductPageContainerStyle";
 import { useState } from "react";
 import { filterProductFromCategory } from "../../utils/helperFunctions";
+import { useCart } from "../../context/CartContext";
 
 const ProductsListingPage = ({ categories, products }) => {
+  const { categorySelectedFromClick } = useCart();
   const [allProducts, setAllProducts] = useState(products);
   const categorySelected = (id) => {
     const filteredProducts = filterProductFromCategory(id, products);
     setAllProducts(filteredProducts);
+    categorySelectedFromClick(id);
   };
 
   return (

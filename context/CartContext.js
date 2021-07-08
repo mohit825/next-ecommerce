@@ -10,6 +10,7 @@ export const CartProvider = ({ children }) => {
   const [modal, setModal] = useState(false);
   const [cartLength, setCartLength] = useState(0);
   const [totalCartPrice, setTotalCartPrice] = useState(0);
+  const [category, selectedCategory] = useState("");
   const calculateCartItemLength = () => {
     let sum = 0;
     cartItem.forEach((prod) => {
@@ -85,6 +86,10 @@ export const CartProvider = ({ children }) => {
     setTotalCartPrice(sum);
   };
 
+  const categorySelectedFromClick = (id) => {
+    selectedCategory(id);
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -92,6 +97,8 @@ export const CartProvider = ({ children }) => {
         cartLength,
         modal,
         totalCartPrice,
+        category,
+        categorySelectedFromClick,
         addToCart,
         openPopup,
         closePopup,
