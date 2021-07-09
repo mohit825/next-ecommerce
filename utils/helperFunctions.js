@@ -26,6 +26,8 @@ export const addToCartHelper = async (id) => {
     return true;
   }
   return false;
+};
+
 export const validation = (values) => {
   let errors = {};
 
