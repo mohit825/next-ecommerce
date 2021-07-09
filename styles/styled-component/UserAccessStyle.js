@@ -28,6 +28,12 @@ export const Section = styled.section`
     padding: 20px;
   }
 
+  .error {
+    font-size: 13px;
+    color: red;
+    padding-left: inherit;
+  }
+
   input {
     width: 50%;
     border: none;
