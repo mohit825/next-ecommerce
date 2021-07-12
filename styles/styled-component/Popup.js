@@ -53,6 +53,13 @@ export const CartContainer = styled.div`
     overflow-y: scroll;
     overflow-x: hidden;
   }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
 `;
 
 export const CartProductContainer = styled.div`
@@ -67,11 +74,12 @@ export const CartProductContainer = styled.div`
     padding: 8px;
   }
   .product-name {
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
   }
   .product-access {
     display: flex;
     justify-content: space-evenly;
+    padding-bottom: 6px;
   }
   .item-group {
     flex-grow: 2;
