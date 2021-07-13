@@ -23,10 +23,13 @@ const CategoriesList = ({ categories, isNavigation, setCategory }) => {
       window.removeEventListener("scroll", evenfunction);
     };
   }, []);
+
   const orderedCategories = orderCategories(categories);
+
   const selectedCategory = (id) => {
     setCategory(id);
   };
+
   const NavigationBar = (
     <Navigation scroll={scroll}>
       {orderedCategories.map((category) => {

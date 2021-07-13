@@ -5,6 +5,7 @@ import { ProductPageContainer } from "../../styles/styled-component/ProductPageC
 import { useState } from "react";
 import { filterProductFromCategory } from "../../utils/helperFunctions";
 import { useCart } from "../../context/CartContext";
+import DropDown from "../../components/DropDown/DropDown";
 
 const ProductsListingPage = ({ categories, products }) => {
   const { categorySelectedFromClick } = useCart();
@@ -18,6 +19,7 @@ const ProductsListingPage = ({ categories, products }) => {
   return (
     <>
       <ProductPageContainer>
+        <DropDown categories={categories} setCategory={categorySelected} />
         <CategoriesList
           isNavigation={true}
           categories={categories}

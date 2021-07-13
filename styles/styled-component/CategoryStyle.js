@@ -44,6 +44,18 @@ export const ProductImg = styled(Img)`
   width: auto;
   object-fit: contain;
   padding: 0 0 10px 0;
+  @media screen and (max-width: 560px) {
+    /* margin-right: 10px; */
+    /* height: 125px; */
+    grid-row: 1/-1;
+    width: 94%;
+    padding: 0;
+  }
+
+  @media screen and (min-width: 530px) and (max-width: 800px) {
+    height: 125px;
+    margin-right: 10px;
+  }
 `;
 
 export const ProductImageContainer = styled.div`

@@ -1,7 +1,11 @@
 import styled from "styled-components";
 export const FlatButton = styled.button`
   background: var(--primary-clr);
-  width: ${({ type }) => (type === "longBtn" ? "50%" : "fit-content")};
+  width: ${({ type }) => {
+    if (type === "longBtn") return "50%";
+    else if (type === "fullBtn") return "100%";
+    else return "fit-content";
+  }};
   color: white;
   padding: 14px;
   cursor: pointer;

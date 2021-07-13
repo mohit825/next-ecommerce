@@ -1,5 +1,8 @@
 import PriceTag from "../ui/Card/PriceTag";
-import { ProductPageButton } from "../styles/styled-component/ButtonStyle";
+import {
+  FlatButton,
+  ProductPageButton,
+} from "../styles/styled-component/ButtonStyle";
 import { CardActionStyle } from "../styles/styled-component/ProductPageContainerStyle";
 import { useCart } from "../context/CartContext";
 import { addToCartHelper } from "../utils/helperFunctions";
@@ -14,15 +17,22 @@ const CardActionContainer = ({ price, product, name }) => {
     }
   };
   return (
-    <CardActionStyle>
-      <PriceTag>{price}</PriceTag>
-      <ProductPageButton
-        aria-label={`Buy ${name} for ${price} ₹ `}
-        onClick={addingItem}
-      >
-        Buy Now
-      </ProductPageButton>
-    </CardActionStyle>
+    <>
+      <div className="tb-cardAction">
+        <FlatButton type="fullBtn" className="tb-btn" onClick={addingItem}>
+          Buy Now @ Rs.{price}
+        </FlatButton>
+      </div>
+      <CardActionStyle>
+        <PriceTag>{price}</PriceTag>
+        <ProductPageButton
+          aria-label={`Buy ${name} for ${price} ₹ `}
+          onClick={addingItem}
+        >
+          Buy Now
+        </ProductPageButton>
+      </CardActionStyle>
+    </>
   );
 };
 export default CardActionContainer;

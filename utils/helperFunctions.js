@@ -28,6 +28,13 @@ export const addToCartHelper = async (id) => {
   return false;
 };
 
+export const getIdFromName = (name, categories) => {
+  const category = categories.filter((category) => {
+    return category.name === name;
+  });
+  return category[0].id;
+};
+
 export const validation = (values) => {
   let errors = {};
 
