@@ -5,6 +5,10 @@ export const Header = styled.header`
   flex-direction: row;
   justify-content: space-around;
   margin-bottom: 10px;
+
+  @media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+    justify-content: space-between;
+  }
   .nav-link {
     display: flex;
     flex-direction: row;
@@ -50,5 +54,23 @@ export const Header = styled.header`
   }
   li > a {
     text-decoration: none;
+  }
+
+  .logo {
+    align-self: center;
+  }
+
+  @media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+    Header {
+      justify-content: space-between;
+    }
+    .nav-link {
+      display: none;
+    }
+
+    .brand-logo {
+      height: 50px;
+      padding: 5px;
+    }
   }
 `;

@@ -29,7 +29,16 @@ const SliderWrapper = styled(Slider)`
   }
 
   .slick-dots {
-    top: 261px;
+    /* top: 261px; */
+  }
+
+  @media only screen and (min-device-width: 320px) and (max-device-width: 768px) {
+    .slick-arrow {
+      display: none !important;
+    }
+    .slick-dots {
+      top: 85px;
+    }
   }
 `;
 

@@ -8,7 +8,7 @@ const MainNavigation = () => {
   return (
     <Header>
       <Link href="/">
-        <a>
+        <a className="logo">
           <Logo />
         </a>
       </Link>

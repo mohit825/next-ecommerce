@@ -60,6 +60,13 @@ export const CartContainer = styled.div`
     top: 0;
     left: 0;
   }
+
+  @media only screen and (min-device-width: 320px) and (max-device-width: 768px) {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
 `;
 
 export const CartProductContainer = styled.div`

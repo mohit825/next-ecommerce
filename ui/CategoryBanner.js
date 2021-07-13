@@ -1,4 +1,6 @@
 import { Container, Img } from "../styles/styled-component/CategoryStyle";
+import { useRouter } from "next/router";
+import { FlatButton } from "../styles/styled-component/ButtonStyle";
 import Button from "./Button";
 const CategoryBanner = ({
   image,
@@ -8,6 +10,8 @@ const CategoryBanner = ({
   categoryKey,
   order,
 }) => {
+  const router = useRouter();
+  const navigateToProduct = () => router.push("/products");
   return (
     <>
       {isEnabled ? (
@@ -16,7 +20,9 @@ const CategoryBanner = ({
           <div className="info-container">
             <h2>{name}</h2>
             <div className="desc">{description}</div>
-            <Button> Explore {categoryKey}</Button>
+            <FlatButton onClick={navigateToProduct}>
+              Explore {categoryKey}
+            </FlatButton>
           </div>
         </Container>
       ) : null}
