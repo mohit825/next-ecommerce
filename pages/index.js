@@ -1,7 +1,7 @@
-import CategoriesList from "../components/CatogoriesList";
+import CategoriesList from "../components/organisms/CategoriesList/CatogoriesList";
 import { fetchfromURI } from "../utils/api-service";
 
-import Carousel from "../ui/Carousel";
+import Carousel from "../components/atoms/Carousel/Carousel";
 
 export default function Home({ banners, categories }) {
   return (

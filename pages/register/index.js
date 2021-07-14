@@ -1,6 +1,6 @@
-import UserAccessContainer from "../../components/UserAccessContainer/UserAccessContainer";
-import { Section } from "../../styles/styled-component/UserAccessStyle";
-import RegisterForm from "../../components/RegisterFormContainer/RegisterForm";
+import UserAccessContainer from "../../components/molecules/UserAccessContainer/UserAccessContainer";
+import { Section } from "../../components/molecules/UserActionContainer/UserAccessStyle";
+import RegisterForm from "../../components/organisms/RegisterFormContainer/RegisterForm";
 const Register = () => {
   return (
     <Section>

@@ -1,11 +1,12 @@
 import { fetchfromURI } from "../../utils/api-service";
-import CategoriesList from "../../components/CatogoriesList";
-import ProductsList from "../../components/ProductsList";
-import { ProductPageContainer } from "../../styles/styled-component/ProductPageContainerStyle";
+// import CategoriesList from "../../components/CatogoriesList";
+import CategoriesList from "../../components/organisms/CategoriesList/CatogoriesList";
+import ProductsList from "../../components/organisms/ProductsList/ProductsList";
+import { ProductPageContainer } from "../../components/molecules/Card/ProductPageContainerStyle";
 import { useState } from "react";
 import { filterProductFromCategory } from "../../utils/helperFunctions";
 import { useCart } from "../../context/CartContext";
-import DropDown from "../../components/DropDown/DropDown";
+import DropDown from "../../components/atoms/DropDown/DropDown";
 
 const ProductsListingPage = ({ categories, products }) => {
   const { categorySelectedFromClick } = useCart();

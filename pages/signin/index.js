@@ -1,6 +1,6 @@
-import UserAccessContainer from "../../components/UserAccessContainer/UserAccessContainer";
-import { Section } from "../../styles/styled-component/UserAccessStyle";
-import LoginForm from "../../components/LoginFormContainer/LoginForm";
+import UserAccessContainer from "../../components/molecules/UserAccessContainer/UserAccessContainer";
+import { Section } from "../../components/molecules/UserActionContainer/UserAccessStyle";
+import LoginForm from "../../components/organisms/LoginFormContainer/LoginForm";
 const Signin = () => {
   return (
     <Section>
