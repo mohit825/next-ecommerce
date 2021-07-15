@@ -1,6 +1,7 @@
 import { FlatButton } from "../../atoms/Button/ButtonStyle";
 import { useState } from "react";
 import { validation } from "../../../utils/helperFunctions";
+import router from "next/router";
 const RegisterForm = () => {
   const [formValues, setFormValues] = useState({
     fName: "",
@@ -29,14 +30,21 @@ const RegisterForm = () => {
   const onClickHandler = (e) => {
     e.preventDefault();
     // console.log("Register", fName, lName, email, password, cnfPassword);
-    // setFname("");
-    // setFname("");
-    // setEmail("");
-    // setPassword("");
-    // setCnfpassword("");
-    // setFormError(validation(formValues));
-
-    console.log();
+    const formErrors = validation(formValues);
+    setFormError(formErrors);
+    if (Object.keys(formErrors).length === 0) {
+      clearForm();
+      router.push("/");
+    }
+  };
+  const clearForm = () => {
+    setFormValues({
+      fName: "",
+      lName: "",
+      email: "",
+      password: "",
+      cnfPassword: "",
+    });
   };
   return (
     <form className="login-form" onSubmit={onClickHandler}>
