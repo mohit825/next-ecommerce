@@ -1,5 +1,4 @@
 import SliderWrapper from "./Bannerstyle";
-
 const Carousel = ({ banners }) => {
   const settings = {
     dots: true,

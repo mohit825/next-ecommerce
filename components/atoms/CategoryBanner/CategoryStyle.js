@@ -5,6 +5,7 @@ export const Img = styled.img`
   width: 30%;
   object-fit: contain;
   padding: 10px;
+  height: auto;
 `;
 
 export const Container = styled.section`

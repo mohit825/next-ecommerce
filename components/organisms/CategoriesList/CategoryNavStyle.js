@@ -10,4 +10,9 @@ export const Navigation = styled.nav`
   top: ${({ scroll }) => (scroll ? 0 : "auto")};
 `;
 
+export const Ul = styled.ul`
+  list-style: none;
+  padding: 0;
+`;
+
 /* flex-direction: ${({ order }) => (order % 2 === 0 ? "row-reverse" : "row")} */

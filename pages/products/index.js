@@ -7,7 +7,7 @@ import { useState } from "react";
 import { filterProductFromCategory } from "../../utils/helperFunctions";
 import { useCart } from "../../context/CartContext";
 import DropDown from "../../components/atoms/DropDown/DropDown";
-
+import Head from "next/head";
 const ProductsListingPage = ({ categories, products }) => {
   const { categorySelectedFromClick } = useCart();
   const [allProducts, setAllProducts] = useState(products);
@@ -19,6 +19,13 @@ const ProductsListingPage = ({ categories, products }) => {
 
   return (
     <>
+      <Head>
+        <title>Products Page</title>
+        <meta
+          name="description"
+          content="Browse through our wide range of products"
+        />
+      </Head>
       <ProductPageContainer>
         <DropDown categories={categories} setCategory={categorySelected} />
         <CategoriesList

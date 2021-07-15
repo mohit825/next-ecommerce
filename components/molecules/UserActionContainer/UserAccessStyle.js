@@ -44,4 +44,16 @@ export const Section = styled.section`
     border-bottom: 2px solid var(--primary-clr);
     outline: none;
   }
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+
+    .info-container {
+      width: 100%;
+    }
+    .login-form {
+      width: 100%;
+      margin: 0 25%;
+    }
+  }
 `;
