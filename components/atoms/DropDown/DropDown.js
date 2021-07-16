@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { Select } from "./Select";
+import { Select } from "./SelectStyle";
 import { getIdFromName } from "../../../utils/helperFunctions";
 const DropDown = ({ categories, setCategory }) => {
-  console.log(categories);
+  // console.log(categories);
   const [cat, setCat] = useState(categories);
   useEffect(() => {
     setCat(categories);

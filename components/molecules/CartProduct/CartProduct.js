@@ -5,7 +5,7 @@ import { useCart } from "../../../context/CartContext";
 
 const CartProduct = ({ items }) => {
   const { incrementQuantity, decrementQuantity } = useCart();
-  console.log(items, "items");
+  // console.log(items, "items");
   return items.map((item) => {
     return (
       <CartProductContainer key={item.id}>
