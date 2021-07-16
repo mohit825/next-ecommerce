@@ -5,7 +5,11 @@ export const Img = styled.img`
   width: 30%;
   object-fit: contain;
   padding: 10px;
-  height: auto;
+  height: 270px;
+
+  @media screen and (max-width: 800px) {
+    height: auto;
+  }
 `;
 
 export const Container = styled.section`
