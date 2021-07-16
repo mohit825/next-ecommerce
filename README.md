@@ -8,7 +8,21 @@ First, run the canned server using:
 npm run start-canned
 ```
 
-Then, run the next js dev server using:
+For Production Ready App. After starting canned server do:
+
+```bash
+npm run build
+```
+
+Then, start that production build using.
+
+```bash
+npm run start-build
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the Production build result.
+
+To run the next js dev server use:
 
 ```bash
 npm run dev
