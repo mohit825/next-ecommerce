@@ -8,7 +8,7 @@ First, run the canned server using:
 npm run start-canned
 ```
 
-For Production Ready App. After starting canned server do:
+For Production Ready App. After starting canned server run this:
 
 ```bash
 npm run build
